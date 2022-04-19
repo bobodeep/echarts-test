@@ -1,0 +1,6 @@
+1.rem可以让屏幕尺寸发生变化的时候，自适应改变
+2.flexible默认是划分10等份的，要修改的话在17到18行那个/10改成别的我目前换成了/24   1920/24=80
+然而设置80px的盒子
+3.和1rm的盒子大小还是不一样推测可能是设置rm的盒子会自适应缩放的缘故而80px的不会,要想使用就下载插件px2rem，然后到setting里修改px to rem里的 root frontsize
+4.less有更多的功能所以用它代替css，less必须保存在css文件夹下面，同时只需要新建一个.less就行，安装file watchers后tool里面找到file watchs点+按键 配置less即可，会自动在.less下生成一模一样的.css文件。
+5.子绝父相：https://www.jianshu.com/p/ee4909360904

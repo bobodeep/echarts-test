@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可视化</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script src="js/echarts.js"></script>
+<script>
+    //初始化实例对象    echarts.init(dom容器)
+    var myChart = echarts.init(document.querySelector(".box"))
+    //指定配置项和数据
+    var option = {
+        color:['pink','red','skyblue','yellow','green'],
+        title: {
+            //标题
+            text: '折线图'
+        },
+        tooltip: {
+            //图标提示标
+            trigger: 'axis'
+        },
+        legend: {
+            //图例组件
+            data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+        },
+        grid: {
+            //控制图表大小
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            //是否显示刻度标签，true'显示，fase不显示
+            containLabel: true
+        },
+        toolbox: {
+            //工具箱组件
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            //是否让我们的线条有空隙
+            boundaryGap: false,
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            //series里面有name那么legend里的data可以删掉顶部任然会显示各个标签
+            {
+                name: 'Email',
+                type: 'line',
+                stack: 'Total',
+                data: [120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+                name: 'Union Ads',
+                type: 'line',
+                stack: 'Total',
+                data: [220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name: 'Video Ads',
+                type: 'line',
+                stack: 'Total',
+                data: [150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name: 'Direct',
+                type: 'line',
+                stack: 'Total',
+                data: [320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+                name: 'Search Engine',
+                type: 'line',
+                stack: 'Total',
+                data: [820, 932, 901, 934, 1290, 1330, 1320]
+            }
+        ]
+    };
+
+    //把配置项给实例对象
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+</body>
+</html>
